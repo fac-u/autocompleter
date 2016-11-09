@@ -1,0 +1,20 @@
+{
+  "name": "autocompleter",
+  "version": "1.0.0",
+  "description": "Simple full-stack text autocompletion implementation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-u/autocompleter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-u/autocompleter/issues"
+  },
+  "homepage": "https://github.com/fac-u/autocompleter#readme"
+}
