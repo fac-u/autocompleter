@@ -4,7 +4,7 @@
   "description": "Simple full-stack text autocompletion implementation",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tape 'bTest/router.test.js'",
     "start": "node server.js"
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fac-u/autocompleter/issues"
   },
-  "homepage": "https://github.com/fac-u/autocompleter#readme"
+  "homepage": "https://github.com/fac-u/autocompleter#readme",
+  "devDependencies": {
+    "tape": "^4.6.2"
+  }
 }
