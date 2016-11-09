@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/fac-u/autocompleter/issues"
   },
-  "homepage": "https://github.com/fac-u/autocompleter#readme"
+  "homepage": "https://github.com/fac-u/autocompleter#readme",
+  "dependencies": {}
 }
