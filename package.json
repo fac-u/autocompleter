@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "tape 'bTest/**/*.js' | tap-spec",
-    "start": "node server.js"
+    "start": "node server.js",
+    "coverage": "istanbul cover ./bTest/router.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/fac-u/autocompleter#readme",
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.2"
   }
