@@ -4,7 +4,7 @@
   "description": "Simple full-stack text autocompletion implementation",
   "main": "server.js",
   "scripts": {
-    "test": "tape 'bTest/router.test.js'",
+    "test": "tape 'bTest/router.test.js' | tap-spec",
     "start": "node server.js"
   },
   "repository": {
