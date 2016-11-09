@@ -18,6 +18,7 @@
     "url": "https://github.com/fac-u/autocompleter/issues"
   },
   "homepage": "https://github.com/fac-u/autocompleter#readme",
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^3.9.1",
     "eslint-config-standard": "^6.2.1",
