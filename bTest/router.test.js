@@ -11,7 +11,7 @@ test('Check tape is working with a simple passing test', function (t) {
 });
 
 test('Check that add test fails as expected', function (t) {
-  t.equal(add(1, 2), 4);
+  t.equal(add(1, 2), 3);
   t.end();
 });
 
