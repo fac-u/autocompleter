@@ -4,10 +4,10 @@
   "description": "Simple full-stack text autocompletion implementation",
   "main": "server.js",
   "scripts": {
-    "test": "tape 'bTest/**/*.js' | tap-spec",
     "start": "node server.js",
-    "coverage": "istanbul cover ./bTest/router.test.js | tap-spec",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "test": "tape 'bTest/**/*.js' | tap-spec",
+    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./src/**/*.js"
   },
   "repository": {
     "type": "git",
