@@ -39,10 +39,11 @@ function handleResponse (err, response) {
 function updateDom (res) {
   var arr = JSON.parse(res);
   var ul = document.createElement('ul');
+  ul.className = 'results';
   arr.forEach(function (element) {
     var li = document.createElement('li');
     li.textContent = element;
     ul.appendChild(li);
   });
-  document.getElementById('mainContainer').appendChild(ul);
+  document.getElementById('leftAlign').appendChild(ul);
 }
