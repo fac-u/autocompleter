@@ -4,14 +4,14 @@ var url = '';
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
   var endpoint = '/get_suggestions';
-  makePostRequest(endpoint, contents, function(err, result) {
-    if(err) {
+  makePostRequest(endpoint, contents, function (err, result) {
+    if (err) {
       console.log(err);
       return;
     } else {
       return result;
     }
-  })
+  });
 });
 
 function makePostRequest (url, data, cb) {
