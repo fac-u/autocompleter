@@ -1,17 +1,10 @@
 var inputField = document.getElementById('searchBox');
-var url = '';
+var url = '/';
 
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
   var endpoint = '/get_suggestions';
-  makePostRequest(endpoint, contents, function (err, result) {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      return result;
-    }
-  });
+  makePostRequest(endpoint, contents, handleResponse);
 });
 
 function makePostRequest (url, data, cb) {
@@ -32,4 +25,24 @@ function makePostRequest (url, data, cb) {
   httpRequest.open('POST', url);
   httpRequest.setRequestHeader('content-type', 'text/xml');
   httpRequest.send(data);
+}
+
+function handleResponse (err, response) {
+  if (err) {
+    console.log(err);
+    return;
+  } else {
+    updateDom(response);
+  }
+}
+
+function updateDom (res) {
+  var arr = JSON.parse(res);
+  var ul = document.createElement('ul');
+  arr.forEach(function (element) {
+    var li = document.createElement('li');
+    li.textContent = element;
+    ul.appendChild(li);
+  });
+  document.getElementById('mainContainer').appendChild(ul);
 }
