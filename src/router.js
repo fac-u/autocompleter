@@ -1,4 +1,5 @@
 
+
 module.exports = router;
 
 var handlers = require('handlers.js');
@@ -23,19 +24,13 @@ function subtract (a, b) {
   return result;
 }
 
-function multiply (a, b) {
-  var result = a * b;
-  return result;
+
+
+
+function router(req,res) {
+  if(req.url === '/') {
+    handler.index(req,res);
+  }
 }
 
-function divide (a, b) {
-  var result = a / b;
-  return result;
-}
-
-module.exports = {
-  'add': add,
-  'subtract': subtract,
-  'multiply': multiply,
-  'divide': divide
-};
+module.exports = router
