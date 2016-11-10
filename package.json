@@ -7,7 +7,7 @@
     "test": "tape 'bTest/**/*.js' | tap-spec",
     "start": "node server.js",
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./src/**/*.js",
-    "posttest": "istanbul report=lcov && codecov",
+    "posttest": "istanbul report lcov && codecov",
     "devStart": "nodemon server.js"
   },
   "repository": {
