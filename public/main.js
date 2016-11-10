@@ -3,7 +3,7 @@ var inputField = document.getElementById('searchBox');
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
   var endpoint = '/get_suggestions';
-  makePostRequest(endpoint, contents, handleResponse);
+  request.post(endpoint, contents, handleResponse);
 });
 
 function handleResponse (err, response) {
