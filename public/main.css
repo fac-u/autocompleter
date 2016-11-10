@@ -27,4 +27,5 @@ input[type="text"] {
   box-shadow: none;
   outline: none;
   background-color: #fff;
+  border: solid 3px #c9c9c9;
 }
