@@ -8,7 +8,7 @@ inputField.addEventListener('input', function () {
       return console.log(err, 'Status code:', res);
     }
     var ul = document.getElementsByClassName('results')[0];
-    res.forEach(function (element) {
+    JSON.parse(res).forEach(function (element) {
       var li = document.createElement('li');
       li.textContent = element;
       ul.appendChild(li);
