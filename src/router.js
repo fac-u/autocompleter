@@ -1,36 +1,21 @@
+var handler = require('./handler');
 
+var routes = {
+  '/': handler.home,
+  '/reset.css': handler.resetCss,
+  '/main.css': handler.mainCss,
+  '/main.js': handler.mainJs,
+  '/get_suggestions': handler.getSuggestions,
+  '404': handler.notFound
+};
+
+function router (req, res) {
+  console.log('Request coming in for endpoint: ' + req.url);
+  if (routes[req.url]) {
+    routes[req.url](req, res);
+  } else {
+    routes['404'](req, res);
+  }
+}
 
 module.exports = router;
-
-var handlers = require('handlers.js');
-var defaultResponse = handlers.defaultResponse;
-
-function router (request, response) {
-  console.log('request recieved');
-  var endpoint = request.url;
-
-  if (endpoint === '/') {
-    defaultResponse(response, './public/index.html', 'html');
-  }
-}
-
-function add (a, b) {
-  var result = a + b;
-  return result;
-}
-
-function subtract (a, b) {
-  var result = a - b;
-  return result;
-}
-
-
-
-
-function router(req,res) {
-  if(req.url === '/') {
-    handler.index(req,res);
-  }
-}
-
-module.exports = router
