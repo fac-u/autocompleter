@@ -10,5 +10,4 @@ function router (request, response) {
   if (endpoint === '/') {
     defaultResponse(response, './public/index.html', 'html');
   }
-
 }
