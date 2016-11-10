@@ -8,6 +8,7 @@ inputField.addEventListener('input', function () {
       return console.log(err, 'Status code:', res);
     }
     var ul = document.getElementsByClassName('results')[0];
+    ul.innerHTML = '';
     JSON.parse(res).forEach(function (element) {
       var li = document.createElement('li');
       li.textContent = element;
