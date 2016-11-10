@@ -1,8 +1,9 @@
 var http = require('http');
-var handler = require('./src/handler.js');
-var server = http.createServer(handler);
+var router = require('./src/router.js');
 var port = /*process.env.PORT ||*/ 3000;
 
-server.listen(port, function() {
-  console.log("FACU server is to port " + port + " and is ready for requests.");
-});
+var server = http.createServer(router);
+
+server.listen(port);
+
+console.log('FACU server is listening on port ' + port + ' and is ready for requests.');
