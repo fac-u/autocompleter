@@ -5,13 +5,10 @@ function makePostRequest (url, data, cb) {
     return false;
   }
   httpRequest.onreadystatechange = function () {
-    if (httpRequest.readyState === 4) {
-      if (httpRequest.status === 200) {
-        cb(null, httpRequest.response);
-      } else {
-        cb('There was a problem with the request');
-      }
+    if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+      return cb(null, httpRequest.response);
     }
+    cb('There was a problem with the request', httpRequest.status);
   };
   httpRequest.open('POST', url);
   httpRequest.setRequestHeader('content-type', 'text/xml');

@@ -1,5 +1,4 @@
 var inputField = document.getElementById('searchBox');
-var url = '/';
 
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
@@ -9,11 +8,10 @@ inputField.addEventListener('input', function () {
 
 function handleResponse (err, response) {
   if (err) {
-    console.log(err);
+    console.log(err, 'Status code:', response);
     return;
-  } else {
-    updateDom(response);
   }
+  updateDom(response);
 }
 
 function updateDom (res) {
