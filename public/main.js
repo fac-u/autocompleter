@@ -8,12 +8,13 @@ inputField.addEventListener('input', function () {
       console.log(err, 'Status code:', res);
       return;
     }
-    var ul = document.getElementsByClassName('results')[0];
-    ul.innerHTML = '';
-    JSON.parse(res).forEach(function (element) {
+    var arr = JSON.parse(res);
+    var newUl = document.createElement('ul');
+    arr.forEach(function (element) {
       var li = document.createElement('li');
       li.textContent = element;
-      ul.appendChild(li);
+      newUl.appendChild(li);
     });
+    document.getElementsByClassName('results')[0].innerHTML = newUl.innerHTML;
   });
 });
