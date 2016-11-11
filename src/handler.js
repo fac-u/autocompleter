@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var autocomplete = require('./autocomplete');
 
 var handler = {};
 
@@ -53,9 +54,11 @@ handler.mainJs = function (req, res) {
 
 handler.getSuggestions = function (req, res) {
   res.writeHead(200, htmlHeaders);
-  console.log(req);
-  var suggestions;
-  res.end(suggestions);
+  var str = '';
+  req.on('data', data => str += data);
+  req.on('end', function () {
+    res.end(JSON.stringify(autocomplete(str)));
+  });
 };
 
 handler.notFound = function (req, res) {
