@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tape 'bTest/**/*.js' | tap-spec",
     "start": "node server.js",
-    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./src/**/*.js",
+    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./**/*.js",
     "posttest": "istanbul report lcov && codecov",
     "devStart": "nodemon server.js"
   },
