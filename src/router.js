@@ -1,4 +1,6 @@
 var handler = require('./handler');
+var fs = require('fs');
+var path = require('path');
 
 var routes = {
   '/': handler.home,
@@ -12,11 +14,13 @@ function router (req, res) {
   if (routes[req.url]) {
     routes[req.url](req, res);
   } else {
-    try {
-      routes['default'](req, res);
-    } catch (err) {
-      routes['404'](req, res);
-    }
+    fs.lstat(path.join(__dirname, '..', 'public', req.url), function (err, result) {
+      if (err) {
+        routes['404'](req, res);
+      } else {
+        routes['default'](req, res);
+      }
+    });
   }
 }
 
