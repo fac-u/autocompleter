@@ -6,6 +6,8 @@ test('Check tape is working with a simple passing test', function (t) {
   t.end();
 });
 
+test('')
+
 // test('Check that router calls handler.index() if url equals /', function (t) {
 //   req.url = '/';
 //   router(req,res);
