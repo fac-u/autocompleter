@@ -2,11 +2,8 @@ var handler = require('./handler');
 
 var routes = {
   '/': handler.home,
-  '/reset.css': handler.resetCss,
-  '/main.css': handler.mainCss,
-  '/main.js': handler.mainJs,
-  '/request.js':handler.reqJs,
   '/get_suggestions': handler.getSuggestions,
+  'default': handler.default,
   '404': handler.notFound
 };
 
@@ -15,7 +12,11 @@ function router (req, res) {
   if (routes[req.url]) {
     routes[req.url](req, res);
   } else {
-    routes['404'](req, res);
+    try {
+      routes['default'](req, res);
+    } catch (err) {
+      routes['404'](req, res);
+    }
   }
 }
 
