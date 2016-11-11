@@ -14,10 +14,13 @@ function makeRequest (url, data, method, cb) {
     return false;
   }
   httpRequest.onreadystatechange = function () {
-    if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-      return cb(null, httpRequest.response);
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if(httpRequest.status === 200) {
+        cb(null, httpRequest.response);
+      } else {
+        cb('There was a problem with the request', httpRequest.status);
+      }
     }
-    cb('There was a problem with the request', httpRequest.status);
   };
   httpRequest.open(method, url);
   httpRequest.setRequestHeader('content-type', 'text/json');
