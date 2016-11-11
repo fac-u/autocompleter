@@ -5,3 +5,16 @@ test('Check tape is working with a simple passing test', function (t) {
   t.pass('handler success');
   t.end();
 });
+
+
+var req = {
+  home: {
+    url: '/',
+    method: 'GET'
+  },
+  getSug: {
+    url: '/get_suggestions',
+    method: 'POST',
+    data: 'facU'
+  }
+}
