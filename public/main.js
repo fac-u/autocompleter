@@ -2,11 +2,9 @@ var inputField = document.getElementById('searchBox');
 
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
-  if (/\s/.test(contents)) {
-    contents = contents.split(' ').pop();
-  }
+  var lastWord = contents.split(' ').pop();
   var endpoint = '/get_suggestions';
-  request.post(endpoint, contents, function (err, res) {
+  request.post(endpoint, lastWord, function (err, res) {
     if (err) {
       console.log(err, 'Status code:', res);
       return;
