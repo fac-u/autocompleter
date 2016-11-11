@@ -5,10 +5,12 @@ inputField.addEventListener('input', function () {
   var endpoint = '/get_suggestions';
   request.post(endpoint, contents, function (err, res) {
     if (err) {
-      return console.log(err, 'Status code:', res);
+      console.log(err, 'Status code:', res);
+      return;
     }
     var ul = document.getElementsByClassName('results')[0];
-    res.forEach(function (element) {
+    ul.innerHTML = '';
+    JSON.parse(res).forEach(function (element) {
       var li = document.createElement('li');
       li.textContent = element;
       ul.appendChild(li);
