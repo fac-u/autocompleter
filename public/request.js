@@ -1,8 +1,8 @@
 var request = {
-  g: function (url, cb) {
+  get: function (url, cb) {
     makeRequest(url, null, 'GET', cb);
   },
-  p: function (url, data, cb) {
+  post: function (url, data, cb) {
     makeRequest(url, data, 'POST', cb);
   }
 };
