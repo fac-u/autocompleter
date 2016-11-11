@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 
 function autocomplete (str) {
+  if (!str) return [];
   var start = Date.now();
   var dictionary = JSON.parse(fs.readFileSync(path.join(__dirname, '../src') + '/dictionary.json', 'utf8'));
   var orderedDict = Object.keys(dictionary).sort((a, b) => dictionary[a] - dictionary[b]);
