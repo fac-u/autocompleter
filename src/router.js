@@ -5,6 +5,7 @@ var routes = {
   '/reset.css': handler.resetCss,
   '/main.css': handler.mainCss,
   '/main.js': handler.mainJs,
+  '/request.js':handler.reqJs,
   '/get_suggestions': handler.getSuggestions,
   '404': handler.notFound
 };
