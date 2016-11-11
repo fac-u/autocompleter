@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tape 'bTest/**/*.js' | tap-spec",
     "start": "node server.js",
-    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./src/**/*.js",
+    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./**/*.js",
     "posttest": "istanbul report lcov && codecov",
     "devStart": "nodemon server.js"
   },
@@ -22,13 +22,14 @@
   "homepage": "https://github.com/fac-u/autocompleter#readme",
   "dependencies": {},
   "devDependencies": {
+    "codecov": "^1.0.1",
     "eslint": "^3.9.1",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.3.1",
     "eslint-plugin-standard": "^2.0.1",
-    "nodemon": "^1.11.0",
     "istanbul": "^0.4.5",
+    "nodemon": "^1.11.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.2"
   }

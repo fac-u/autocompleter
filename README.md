@@ -1,4 +1,5 @@
 # Autocompleter
+[![Build Status](https://travis-ci.org/fac-u/autocompleter.svg?branch=master)](https://travis-ci.org/fac-u/autocompleter)  
 Simple full-stack text autocompletion implementation
 
 ### What
@@ -23,4 +24,3 @@ Simple full-stack text autocompletion implementation
 - Qunit testing of the front end
 - instanbul
 - Tape testing of back end
-

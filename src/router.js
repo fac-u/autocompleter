@@ -1,12 +1,11 @@
 var handler = require('./handler');
+var fs = require('fs');
+var path = require('path');
 
 var routes = {
   '/': handler.home,
-  '/reset.css': handler.resetCss,
-  '/main.css': handler.mainCss,
-  '/main.js': handler.mainJs,
-  '/request.js':handler.reqJs,
   '/get_suggestions': handler.getSuggestions,
+  'default': handler.default,
   '404': handler.notFound
 };
 
@@ -15,7 +14,13 @@ function router (req, res) {
   if (routes[req.url]) {
     routes[req.url](req, res);
   } else {
-    routes['404'](req, res);
+    fs.lstat(path.join(__dirname, '..', 'public', req.url), function (err, result) {
+      if (err) {
+        routes['404'](req, res);
+      } else {
+        routes['default'](req, res);
+      }
+    });
   }
 }
 
