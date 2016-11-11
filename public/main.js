@@ -2,7 +2,8 @@ var inputField = document.getElementById('searchBox');
 
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
-  postRequest(contents);
+  var lastWord = contents.split(' ').pop();
+  postRequest(lastWord);
 });
 
 function postRequest (str) {
@@ -14,7 +15,18 @@ function postRequest (str) {
     }
     updateDom(res);
   });
-}
+};
+
+document.querySelector('ul').addEventListener('click', function (event) {
+  if (event.target.tagName.toLowerCase() === 'li') {
+    var currentWord = event.target.textContent;
+    var words = inputField.value.split(' ').slice(0, -1);
+    words.push(currentWord);
+    var currentString = words.join(' ') + ' ';
+    inputField.value = currentString;
+    inputField.focus();
+  }
+});
 
 function updateDom (res) {
   var arr = JSON.parse(res);
