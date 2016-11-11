@@ -51,6 +51,16 @@ handler.mainJs = function (req, res) {
   });
 };
 
+handler.reqJs = function (req, res) {
+  res.writeHead(200, jsHeaders);
+  var filepath = path.join(__dirname, '..', 'public', 'request.js');
+  fs.readFile(filepath, function (err, data) {
+    if (err) console.log(err);
+    res.end(data);
+  });
+};
+
+
 handler.getSuggestions = function (req, res) {
   res.writeHead(200, htmlHeaders);
   console.log(req);
