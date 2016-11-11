@@ -19,3 +19,16 @@ inputField.addEventListener('input', function () {
     document.getElementsByClassName('results')[0].innerHTML = newUl.innerHTML;
   });
 });
+
+
+document.querySelector('ul').addEventListener('click', function (event) {
+  if (event.target.tagName.toLowerCase() === 'li') {
+    var currentWord = event.target.textContent;
+    var words = inputField.value.split(' ').slice(0, -1);
+    words.push(currentWord);
+    var currentString = words.join(' ') + ' ';
+    inputField.value = currentString;
+    inputField.focus();
+
+  }
+});
