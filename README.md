@@ -1,5 +1,7 @@
 # Autocompleter
-[![Build Status](https://travis-ci.org/fac-u/autocompleter.svg?branch=master)](https://travis-ci.org/fac-u/autocompleter)  
+[![Build Status](https://travis-ci.org/fac-u/autocompleter.svg?branch=master)](https://travis-ci.org/fac-u/autocompleter)
+[![codecov](https://codecov.io/gh/fac-u/autocompleter/branch/master/graph/badge.svg)](https://codecov.io/gh/fac-u/autocompleter)
+
 Simple full-stack text autocompletion implementation
 
 ### What
