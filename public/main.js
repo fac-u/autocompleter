@@ -15,16 +15,20 @@ function postRequest (str) {
     }
     updateDom(res);
   });
-};
+}
 
 document.querySelector('ul').addEventListener('click', function (event) {
   if (event.target.tagName.toLowerCase() === 'li') {
+    event.target.style.color = '#000';
     var currentWord = event.target.textContent;
     var words = inputField.value.split(' ').slice(0, -1);
     words.push(currentWord);
     var currentString = words.join(' ') + ' ';
     inputField.value = currentString;
     inputField.focus();
+    setTimeout(function () {
+      document.getElementsByClassName('results')[0].innerHTML = null;
+    }, 200);
   }
 });
 
@@ -33,6 +37,7 @@ function updateDom (res) {
   var newUl = document.createElement('ul');
   arr.forEach(function (element) {
     var li = document.createElement('li');
+    li.className = "list";
     li.textContent = element;
     newUl.appendChild(li);
   });
