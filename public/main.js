@@ -43,6 +43,6 @@ document.querySelector('ul').addEventListener('click', function (event) {
     inputField.focus();
     setTimeout(function () {
       document.getElementsByClassName('results')[0].innerHTML = null;
-    }, 220);
+    }, 300);
   }
 });
