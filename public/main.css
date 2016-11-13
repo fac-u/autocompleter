@@ -43,6 +43,6 @@ input[type="text"] {
   padding-left: 2px;
 }
 
-.list:hover {
+.list:focus, .list:hover {
   color:#777;
 }
