@@ -1,8 +1,9 @@
 var inputField = document.getElementById('searchBox');
 
+// sends request for popular words every input and updates the dom
 inputField.addEventListener('input', function () {
   var contents = inputField.value;
-  var lastWord = contents.split(' ').pop();
+  var lastWord = contents.split(' ').pop().toLowerCase();
   postRequest(lastWord);
 });
 
@@ -15,26 +16,33 @@ function postRequest (str) {
     }
     updateDom(res);
   });
-};
-
-document.querySelector('ul').addEventListener('click', function (event) {
-  if (event.target.tagName.toLowerCase() === 'li') {
-    var currentWord = event.target.textContent;
-    var words = inputField.value.split(' ').slice(0, -1);
-    words.push(currentWord);
-    var currentString = words.join(' ') + ' ';
-    inputField.value = currentString;
-    inputField.focus();
-  }
-});
+}
 
 function updateDom (res) {
   var arr = JSON.parse(res);
   var newUl = document.createElement('ul');
   arr.forEach(function (element) {
     var li = document.createElement('li');
+    li.className = 'list';
+    li.tabIndex = 0;
     li.textContent = element;
     newUl.appendChild(li);
   });
   document.getElementsByClassName('results')[0].innerHTML = newUl.innerHTML;
 }
+
+// populates input field with clicked suggested word and clears suggestions
+document.querySelector('ul').addEventListener('click', function (event) {
+  if (event.target.tagName.toLowerCase() === 'li') {
+    event.target.style.color = '#1b424f';
+    var currentWord = event.target.textContent;
+    var words = inputField.value.split(' ').slice(0, -1);
+    words.push(currentWord);
+    var currentString = words.join(' ') + ' ';
+    inputField.value = currentString;
+    inputField.focus();
+    setTimeout(function () {
+      document.getElementsByClassName('results')[0].innerHTML = null;
+    }, 300);
+  }
+});
