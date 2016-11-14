@@ -1,13 +1,11 @@
-var fs = require('fs');
-var path = require('path');
+var dictionary = require('./read-dictionary.js');
 
 function autocomplete (str) {
   if (!str) return [];
   var start = Date.now();
-  var dictionary = JSON.parse(fs.readFileSync(path.join(__dirname, '../src') + '/orderedDict.json', 'utf8'));
   var results = [];
-  for (var i = 0; results.length < 5 && i < dictionary.length; i++) {
-    var word = dictionary[i];
+  for (var i = 0; results.length < 5 && i < dictionary.data.length; i++) {
+    var word = dictionary.data[i];
     if (word.substring(0, str.length) === str) {
       results.push(word);
     }
