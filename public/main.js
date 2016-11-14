@@ -47,9 +47,9 @@ document.querySelector('ul').addEventListener('click', function (event) {
   }
 });
 
-window.onload = function() {
-    document.getElementById('welcomeTrack').play();
-}
+window.onload = function () {
+  document.getElementById('welcomeTrack').play();
+};
 
 /*
 function redirectToGoogle() {
