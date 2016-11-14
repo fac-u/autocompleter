@@ -50,3 +50,13 @@ document.querySelector('ul').addEventListener('click', function (event) {
 window.onload = function() {
     document.getElementById('welcomeTrack').play();
 }
+
+/*
+function redirectToGoogle() {
+    var inputValue = (inputField.value).replace(/\s/g, '+');
+    if (inputValue) {
+      var googleLink = "https://www.google.co.uk/?#q=" + inputValue;
+      window.open(googleLink);
+    }
+  }
+  */
