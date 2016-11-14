@@ -27,42 +27,6 @@ handler.default = function (req, res) {
     res.end(data);
   });
 };
-//
-// handler.resetCss = function (req, res) {
-//   res.writeHead(200, cssHeaders);
-//   var filepath = path.join(__dirname, '..', 'public', 'reset.css');
-//   fs.readFile(filepath, function (err, data) {
-//     if (err) console.log(err);
-//     res.end(data);
-//   });
-// };
-//
-// handler.mainCss = function (req, res) {
-//   res.writeHead(200, cssHeaders);
-//   var filepath = path.join(__dirname, '..', 'public', 'main.css');
-//   fs.readFile(filepath, function (err, data) {
-//     if (err) console.log(err);
-//     res.end(data);
-//   });
-// };
-//
-// handler.mainJs = function (req, res) {
-//   res.writeHead(200, jsHeaders);
-//   var filepath = path.join(__dirname, '..', 'public', 'main.js');
-//   fs.readFile(filepath, function (err, data) {
-//     if (err) console.log(err);
-//     res.end(data);
-//   });
-// };
-//
-// handler.reqJs = function (req, res) {
-//   res.writeHead(200, jsHeaders);
-//   var filepath = path.join(__dirname, '..', 'public', 'request.js');
-//   fs.readFile(filepath, function (err, data) {
-//     if (err) console.log(err);
-//     res.end(data);
-//   });
-// };
 
 handler.getSuggestions = function (req, res) {
   res.writeHead(200, htmlHeaders);
