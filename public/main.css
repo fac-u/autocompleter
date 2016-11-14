@@ -46,3 +46,7 @@ input[type="text"] {
 .list:focus, .list:hover {
   color:#777;
 }
+
+#welcomeTrack {
+  display: none;
+}

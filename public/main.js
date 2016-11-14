@@ -24,7 +24,6 @@ function updateDom (res) {
   arr.forEach(function (element) {
     var li = document.createElement('li');
     li.className = 'list';
-    li.tabIndex = 0;
     li.textContent = element;
     newUl.appendChild(li);
   });
@@ -46,3 +45,7 @@ document.querySelector('ul').addEventListener('click', function (event) {
     }, 300);
   }
 });
+
+window.onload = function() {
+    document.getElementById('welcomeTrack').play();
+}
