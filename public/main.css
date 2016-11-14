@@ -47,6 +47,10 @@ input[type="text"] {
   color:#777;
 }
 
+
 #welcomeTrack {
   display: none;
+
+.clicked:focus, .clicked:hover {
+  color: #1b424f;
 }
