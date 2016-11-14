@@ -34,7 +34,7 @@ function updateDom (res) {
 // populates input field with clicked suggested word and clears suggestions
 document.querySelector('ul').addEventListener('click', function (event) {
   if (event.target.tagName.toLowerCase() === 'li') {
-    event.target.style.color = '#1b424f';
+    event.target.className += ' clicked';
     var currentWord = event.target.textContent;
     var words = inputField.value.split(' ').slice(0, -1);
     words.push(currentWord);
