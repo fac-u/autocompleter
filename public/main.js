@@ -24,7 +24,6 @@ function updateDom (res) {
   arr.forEach(function (element) {
     var li = document.createElement('li');
     li.className = 'list';
-    li.tabIndex = 0;
     li.textContent = element;
     newUl.appendChild(li);
   });
@@ -34,6 +33,7 @@ function updateDom (res) {
 // populates input field with clicked suggested word and clears suggestions
 document.querySelector('ul').addEventListener('click', function (event) {
   if (event.target.tagName.toLowerCase() === 'li') {
+    document.getElementById('ding').play();
     event.target.className += ' clicked';
     var currentWord = event.target.textContent;
     var words = inputField.value.split(' ').slice(0, -1);
@@ -46,3 +46,7 @@ document.querySelector('ul').addEventListener('click', function (event) {
     }, 300);
   }
 });
+
+window.onload = function() {
+    document.getElementById('welcomeTrack').play();
+}
