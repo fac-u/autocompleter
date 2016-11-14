@@ -50,6 +50,7 @@ input[type="text"] {
 
 #welcomeTrack {
   display: none;
+}
 
 .clicked:focus, .clicked:hover {
   color: #1b424f;
