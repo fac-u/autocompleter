@@ -14,6 +14,6 @@ function startServer () {
 
 startServer();
 
-setInterval(function () {
-    http.get("http://facu-autocompleter.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+//setInterval(function () {
+//    http.get("http://facu-autocompleter.herokuapp.com");
+//}, 300000); // every 5 minutes (300000)
